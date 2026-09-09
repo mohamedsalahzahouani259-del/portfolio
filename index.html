@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Salah Zahouani — Développeur Web & Automatisation avec IA</title>
+  <meta name="description" content="Portfolio de Mohamed Salah Zahouani, Développeur Web & Spécialiste en Automatisation IA à Sousse, Tunisie. Créateur du système de réception d'appels IA Foody et des sites web pour restaurants.">
+  <meta name="author" content="Mohamed Salah Zahouani">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-badge">MZ</div>
+        <div class="brand-text">Mohamed Salah <span>.dev</span></div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Accueil</a>
+        <a href="#about" class="nav-link">À propos</a>
+        <a href="#services" class="nav-link">Expertises</a>
+        <a href="#projects" class="nav-link">Projets</a>
+        <a href="#benefits" class="nav-link">Pourquoi moi</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/21600000000?text=Bonjour%20Mohamed%20Salah,%20je%20souhaite%20discuter%20d'un%20projet%20web%20/%20automatisation%20IA" target="_blank" rel="noopener noreferrer" class="btn-primary btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#contact" class="btn-primary">
+          <span>Me contacter</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+      <!-- Bouton Menu Mobile -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Déroulant -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" class="mobile-link">Accueil</a>
+    <a href="#about" class="mobile-link">À propos</a>
+    <a href="#services" class="mobile-link">Expertises</a>
+    <a href="#projects" class="mobile-link">Projets</a>
+    <a href="#benefits" class="mobile-link">Pourquoi moi</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="https://wa.me/21600000000?text=Bonjour%20Mohamed%20Salah,%20je%20souhaite%20discuter%20d'un%20projet" target="_blank" class="btn-primary btn-whatsapp" style="justify-content:center;">
+      Discuter sur WhatsApp
+    </a>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Texte Hero -->
+          <div class="hero-content">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>Disponible pour de nouveaux projets</span>
+            </div>
+
+            <h1 class="hero-title">
+              Mohamed Salah <br>
+              <span class="gradient-text">Zahouani</span>
+            </h1>
+
+            <p class="hero-description">
+              <strong>Développeur Web & Spécialiste Automatisation avec IA</strong>. Je conçois des sites web percutants et déploie des systèmes d'intelligence artificielle vocale pour les restaurants et entreprises, éliminant les appels manqués et boostant leurs réservations.
+            </p>
+
+            <div class="hero-tags">
+              <div class="hero-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Sousse, Tunisie</span>
+              </div>
+              <div class="hero-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>22 ans</span>
+              </div>
+              <div class="hero-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Spécialiste Restauration & IA</span>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn-primary">
+                <span>Voir mes réalisations</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+              <a href="#contact" class="btn-secondary">
+                <span>Me contacter</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Carte Visuelle Hero avec Photo -->
+          <div class="hero-visual">
+            <div class="profile-card-wrapper">
+              <div class="profile-card-glow"></div>
+              
+              <!-- Floating Badge Haut Gauche -->
+              <div class="floating-badge badge-top-left">
+                <div class="badge-icon phone">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="badge-text">
+                  <strong>Foody (France)</strong>
+                  <small>Agent Vocal Téléphonique IA</small>
+                </div>
+              </div>
+
+              <!-- Floating Badge Bas Droite -->
+              <div class="floating-badge badge-bottom-right">
+                <div class="badge-icon ai">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </div>
+                <div class="badge-text">
+                  <strong>Automatisation IA</strong>
+                  <small>Gain de temps & 0 appel manqué</small>
+                </div>
+              </div>
+
+              <div class="profile-card">
+                <div class="profile-img-container">
+                  <img src="assets/images/profile.jpg" alt="Mohamed Salah Zahouani" class="profile-img">
+                </div>
+                <div class="profile-caption">
+                  <div>
+                    <div class="profile-name">Mohamed Salah Zahouani</div>
+                    <div class="profile-role">
+                      <span>✦ Développeur Web & IA</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.85rem; color: var(--text-muted);">Sousse, TN</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Ruban Chiffres Clés -->
+        <div class="stats-strip">
+          <div class="stat-item">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Projets de référence livrés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Accueil téléphonique par IA</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Responsive & Haute Performance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Appels clients manqués aux rushs</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== À PROPOS ==================== -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Qui suis-je</span>
+          <h2 class="section-title">Allier l'élégance du Web à la puissance de l'IA</h2>
+          <p class="section-description">
+            Basé à Sousse en Tunisie, j'accompagne les établissements de restauration et entreprises dans leur transition numérique moderne.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-text">
+              <h3>Passionné, réactif et axé sur les résultats concrets</h3>
+              <p>
+                Je m'appelle <strong>Mohamed Salah Zahouani</strong>, j'ai 22 ans et je vis à Sousse. Passionné par l'informatique depuis des années, j'ai développé une double expertise très demandée : la création d'interfaces web soignées et l'intégration d'automatisations par Intelligence Artificielle.
+              </p>
+              <p>
+                Mon approche ne se limite pas à concevoir de jolis sites : je résous des problèmes opérationnels réels. Pour le restaurant <strong>Foody en France</strong>, j'ai conçu un système complet de réception téléphonique par IA qui prend les réservations et les commandes sans aucune intervention humaine pendant le service.
+              </p>
+
+              <div class="about-highlights">
+                <div class="highlight-box">
+                  <strong>22 Ans</strong>
+                  <span>Dynamisme, veille technologique et maîtrise des outils IA récents</span>
+                </div>
+                <div class="highlight-box">
+                  <strong>Sousse, TN</strong>
+                  <span>Travail en local et à l'international (France, Maghreb, Europe)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-details">
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <div class="info-body">
+                <h4>Développement Web Sur-Mesure</h4>
+                <p>Création de sites web rapides, fluides, esthétiques et 100% adaptés aux smartphones pour les restaurants (Smoke House, Dar Baya, Pervoi).</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <div class="info-body">
+                <h4>Voice AI & Automatisation Téléphonique</h4>
+                <p>Déploiement d'agents vocaux intelligents capables de converser en direct au téléphone, répondre aux demandes et enregistrer les commandes 24/7.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="info-body">
+                <h4>Expérience Client & Réservations Directes</h4>
+                <p>Optimisation du parcours utilisateur pour convertir chaque appel et visiteur en client fidèle, tout en libérant le personnel des tâches répétitives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== EXPERTISES / SERVICES ==================== -->
+    <section id="services" style="background: rgba(15, 23, 42, 0.3);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Services & Compétences</span>
+          <h2 class="section-title">Ce que je mets en œuvre pour votre activité</h2>
+          <p class="section-description">Des technologies modernes appliquées avec précision pour des bénéfices palpables dès la première semaine.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Carte 1: Voice AI -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <h3 class="service-title">Systèmes Téléphoniques IA</h3>
+            <p class="service-desc">Agent conversationnel vocal connecté à votre numéro de téléphone pour réceptionner chaque appel en français avec fluidité et précision.</p>
+            <div class="service-features">
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Prise de réservations et commandes vocales</span>
+              </div>
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Réponse instantanée aux questions (menu, horaires)</span>
+              </div>
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Décrochage 24h/24 sans aucun appel manqué</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte 2: Sites Web Restaurants -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-title">Sites Web & Menus Digitaux</h3>
+            <p class="service-desc">Conception de vitrines digitales gastronomiques, modernes et alléchantes, pensées pour donner faim et déclencher la réservation.</p>
+            <div class="service-features">
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Menus interactifs élégants (QR Code & web)</span>
+              </div>
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Réservation de table en ligne intuitive</span>
+              </div>
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Optimisation Mobile First & SEO Local</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte 3: Workflows & Automatisations -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="service-title">Intégrations & Alertes</h3>
+            <p class="service-desc">Synchronisation automatique de vos données entre vos formulaires, vos outils de gestion, WhatsApp et vos agendas.</p>
+            <div class="service-features">
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Confirmation de réservation automatique par SMS/WhatsApp</span>
+              </div>
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Notification directe en cuisine ou au gérant</span>
+              </div>
+              <div class="service-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Centralisation des clients pour le marketing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== PROJETS (PORTFOLIO) ==================== -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfolio</span>
+          <h2 class="section-title">Mes Réalisations Clés</h2>
+          <p class="section-description">Des projets concrets en production démontrant mon savoir-faire en automatisation par IA et création web.</p>
+        </div>
+
+        <!-- Filtres de projets -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">Tous les projets</button>
+          <button class="filter-btn" data-filter="ai">Automatisation & IA</button>
+          <button class="filter-btn" data-filter="web">Sites Web Restaurants</button>
+        </div>
+
+        <!-- PROJET VEDETTE: FOODY (FRANCE) -->
+        <div class="featured-project project-item" data-category="ai">
+          <div class="featured-grid">
+            <div>
+              <div class="featured-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Projet Vedette • Intelligence Artificielle Vocale
+              </div>
+              <h3 class="featured-title">Système de Réception Téléphonique IA — Restaurant Foody</h3>
+              <div class="featured-location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Restaurant Foody (France) • Système actif en production</span>
+              </div>
+              <p class="featured-desc">
+                Conception et déploiement d'un agent vocal IA sur mesure pour le restaurant Foody en France. L'IA décroche le téléphone sans attente, comprend la voix des clients, enregistre leurs réservations de table et leurs commandes, puis synchronise automatiquement les informations avec le restaurant.
+              </p>
+              <div class="featured-tags">
+                <span class="tech-tag">Voice AI</span>
+                <span class="tech-tag">Téléphonie IP</span>
+                <span class="tech-tag">OpenAI LLM</span>
+                <span class="tech-tag">Webhooks & API</span>
+                <span class="tech-tag">Gestion Réservations</span>
+                <span class="tech-tag">France</span>
+              </div>
+              <button class="btn-primary" onclick="openProjectModal('foody')">
+                <span>Voir les détails techniques</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </button>
+            </div>
+
+            <!-- Workflow Visuel de l'IA Foody -->
+            <div class="ai-workflow-box">
+              <div class="ai-workflow-header">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  Flux de Traitement de l'Appel Foody
+                </h4>
+                <span class="live-indicator">
+                  <span class="status-dot"></span>
+                  Opérationnel
+                </span>
+              </div>
+
+              <div class="workflow-steps">
+                <div class="workflow-step">
+                  <span class="step-num">01</span>
+                  <div class="step-info">
+                    <strong>Appel Client entrant</strong>
+                    <span>Décrochage instantané sans faire sonner en continu</span>
+                  </div>
+                </div>
+
+                <div class="workflow-step">
+                  <span class="step-num">02</span>
+                  <div class="step-info">
+                    <strong>Dialogue Vocal & Compréhension</strong>
+                    <span>L'agent IA échange naturellement, note date/heure/couverts ou plats</span>
+                  </div>
+                </div>
+
+                <div class="workflow-step">
+                  <span class="step-num">03</span>
+                  <div class="step-info">
+                    <strong>Confirmation & Transmission</strong>
+                    <span>Réservation inscrite au planning + SMS/WhatsApp envoyé au client</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRILLE DES PROJETS SITES WEB RESTAURANTS -->
+        <div class="projects-grid">
+          
+          <!-- Projet 1: SMOKE HOUSE -->
+          <div class="project-card project-item" data-category="web">
+            <div class="project-preview project-banner-smoke">
+              <div class="project-watermark">
+                <span class="watermark-badge">🔥 Smoke House</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Site Web Restaurant</span>
+              <h3 class="project-title">Smoke House</h3>
+              <p class="project-desc">
+                Site vitrine moderne pour un restaurant de viandes fumées et barbecue. Menu visuel interactif, galerie photos gourmande et système de réservation directe.
+              </p>
+              <div class="project-tech">
+                <span>HTML5 / CSS3</span>
+                <span>JavaScript</span>
+                <span>Menu Interactif</span>
+                <span>Réservation</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-link" onclick="openProjectModal('smokehouse')">
+                  Voir la fiche projet &rarr;
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2: DAR BAYA -->
+          <div class="project-card project-item" data-category="web">
+            <div class="project-preview project-banner-darbaya">
+              <div class="project-watermark">
+                <span class="watermark-badge">🏛️ Dar Baya</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Gastronomie & Tradition</span>
+              <h3 class="project-title">Dar Baya</h3>
+              <p class="project-desc">
+                Conception d'une plateforme web raffinée mettant en valeur l'authenticité culinaire et l'ambiance prestigieuse du restaurant Dar Baya.
+              </p>
+              <div class="project-tech">
+                <span>Direction Artistique</span>
+                <span>UI/UX Élégante</span>
+                <span>Carte des Vins/Plats</span>
+                <span>Réservations</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-link" onclick="openProjectModal('darbaya')">
+                  Voir la fiche projet &rarr;
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 3: PERVOI -->
+          <div class="project-card project-item" data-category="web">
+            <div class="project-preview project-banner-pervoi">
+              <div class="project-watermark">
+                <span class="watermark-badge">✨ Pervoi</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Restaurant & Lounge</span>
+              <h3 class="project-title">Pervoi</h3>
+              <p class="project-desc">
+                Interface contemporaine et immersive axée sur la convivialité, les cocktails signatures et la carte gourmande du restaurant Pervoi.
+              </p>
+              <div class="project-tech">
+                <span>Mobile-First</span>
+                <span>Performance Web</span>
+                <span>Call to Action</span>
+                <span>SEO Local</span>
+              </div>
+              <div class="project-footer">
+                <span class="project-link" onclick="openProjectModal('pervoi')">
+                  Voir la fiche projet &rarr;
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== POURQUOI MOI (AVANTAGES) ==================== -->
+    <section class="benefits-section" id="benefits">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Valeur Ajoutée</span>
+          <h2 class="section-title">Pourquoi me confier votre projet ?</h2>
+          <p class="section-description">Des solutions pensées pour soulager vos équipes et faire grandir votre chiffre d'affaires.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h4>Zéro Appel Perdu</h4>
+            <p>Pendant le service, chaque appel manqué est une table vide. L'IA répond et convertit vos appelants en réservations.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h4>Expérience Mobile Idéale</h4>
+            <p>Plus de 85% de vos clients consultent votre carte sur smartphone : vos sites s'affichent instantanément et sans accroc.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h4>Rapidité & Clarté</h4>
+            <p>Code propre, léger, sans lourdeurs techniques inutiles. Vos solutions restent rapides et pérennes.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Contact Direct & Réactif</h4>
+            <p>Échange direct avec moi, de la phase de cadrage jusqu'au déploiement et à la maintenance continue.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Parlons de votre projet</span>
+          <h2 class="section-title">Prêt à moderniser votre activité ?</h2>
+          <p class="section-description">Que vous souhaitiez un site web pour votre restaurant ou un agent vocal IA pour automatiser vos appels, contactez-moi directement.</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Infos Directes -->
+          <div class="contact-info">
+            <a href="https://wa.me/21600000000?text=Bonjour%20Mohamed%20Salah,%20je%20souhaite%20un%20devis%20pour%20mon%20projet" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-icon" style="background: rgba(37, 211, 102, 0.15); color: #25d366;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div class="contact-details">
+                <small>WhatsApp Direct</small>
+                <strong>Discuter sur WhatsApp</strong>
+              </div>
+            </a>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-details">
+                <small>Adresse Email</small>
+                <strong>contact@mohamedsalah.dev</strong>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon" style="background: rgba(99, 102, 241, 0.15); color: #6366f1;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-details">
+                <small>Localisation</small>
+                <strong>Sousse, Tunisie</strong>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              </div>
+              <div class="contact-details">
+                <small>Disponibilité</small>
+                <strong>Missions en cours & Nouveaux projets</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulaire de contact -->
+          <div class="contact-form-card">
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Votre Nom & Prénom</label>
+                  <input type="text" id="name" class="form-control" placeholder="Ex: Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Votre Email</label>
+                  <input type="email" id="email" class="form-control" placeholder="Ex: jean@restaurant.fr" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Numéro de téléphone</label>
+                  <input type="tel" id="phone" class="form-control" placeholder="Ex: +33 6 ... ou +216 ...">
+                </div>
+                <div class="form-group">
+                  <label for="projectType">Type de projet</label>
+                  <select id="projectType" class="form-control">
+                    <option value="both">Site Web & Automatisation IA</option>
+                    <option value="ai">Réception Téléphonique IA (Voice Bot)</option>
+                    <option value="web">Création de Site Web pour Restaurant</option>
+                    <option value="other">Autre demande</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Décrivez votre besoin</label>
+                <textarea id="message" class="form-control" placeholder="Parlez-moi de votre établissement, vos objectifs et vos besoins..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary form-btn">
+                <span>Envoyer ma demande</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-info">
+          <a href="#hero" class="brand-logo">
+            <div class="brand-badge">MZ</div>
+            <div class="brand-text">Mohamed Salah <span>.dev</span></div>
+          </a>
+          <p>Développeur Web & Automatisation avec IA — Sousse, Tunisie.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#hero">Accueil</a>
+          <a href="#about">À propos</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projets</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Mohamed Salah Zahouani</strong>. Tous droits réservés.
+        </div>
+        <a href="#hero" class="back-to-top">
+          <span>Haut de page</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== MODAL DE DÉTAIL PROJET ==================== -->
+  <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <button class="modal-close" id="modalClose" aria-label="Fermer la boîte de dialogue">&times;</button>
+      <div id="modalBody">
+        <!-- Rempli dynamiquement par main.js -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Notification Toast -->
+  <div class="toast-msg" id="toastMsg">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <span>Merci ! Votre message a bien été envoyé. Je vous répondrai très rapidement.</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
