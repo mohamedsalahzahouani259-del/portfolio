@@ -59,5 +59,5 @@ npm run build
 - **Développeur** : Mohamed Salah Zahouani
 - **Âge** : 22 ans
 - **Localisation** : Sousse, Tunisie 🇹🇳
-- **WhatsApp** : Accessible directement via le bouton sur le site
+- **Téléphone / WhatsApp** : [+216 28 233 241](tel:+21628233241)
 - **Email** : contact@mohamedsalah.dev
