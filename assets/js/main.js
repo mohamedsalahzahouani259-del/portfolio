@@ -343,23 +343,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load saved reviews from localStorage
   const STORAGE_KEY = 'msz_portfolio_client_reviews';
+  const emptyReviewsMsg = document.getElementById('emptyReviewsMessage');
+
+  function updateEmptyMessageState(hasReviews) {
+    if (emptyReviewsMsg) {
+      emptyReviewsMsg.style.display = hasReviews ? 'none' : 'block';
+    }
+  }
+
   function loadSavedReviews() {
     if (!userReviewsContainer) return;
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const reviews = JSON.parse(saved);
-        if (Array.isArray(reviews)) {
+        if (Array.isArray(reviews) && reviews.length > 0) {
           let html = '';
           reviews.forEach(rev => {
             html += createReviewCardHTML(rev, false);
           });
           userReviewsContainer.innerHTML = html;
+          updateEmptyMessageState(true);
+          return;
         }
       }
     } catch (e) {
       console.warn('Could not load reviews from localStorage', e);
     }
+    updateEmptyMessageState(false);
   }
 
   loadSavedReviews();
@@ -421,6 +432,8 @@ document.addEventListener('DOMContentLoaded', () => {
           cardElement.style.opacity = '1';
           cardElement.style.transform = 'translateY(0)';
         }, 50);
+
+        updateEmptyMessageState(true);
       }
 
       // Reset form
