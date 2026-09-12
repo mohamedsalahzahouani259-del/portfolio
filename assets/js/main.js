@@ -215,10 +215,241 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. Contact Form Simulation & Toast
-  const contactForm = document.getElementById('contactForm');
-  const toastMsg = document.getElementById('toastMsg');
+  // 6. Client Reviews & Interactive Star Picker
+  const starPicker = document.getElementById('starPicker');
+  const starButtons = document.querySelectorAll('.star-pick-btn');
+  const selectedRatingInput = document.getElementById('selectedRating');
+  const starValueText = document.getElementById('starValueText');
+  const reviewForm = document.getElementById('reviewForm');
+  const userReviewsContainer = document.getElementById('userReviewsContainer');
 
+  const ratingDescriptions = {
+    1: '1 étoile — À améliorer',
+    2: '2 étoiles — Passable',
+    3: '3 étoiles — Bon travail',
+    4: '4 étoiles — Très bon !',
+    5: '5 étoiles — Excellent !'
+  };
+
+  function updateStarDisplay(rating) {
+    starButtons.forEach(btn => {
+      const btnRating = parseInt(btn.getAttribute('data-rating'), 10);
+      if (btnRating <= rating) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    if (starValueText && ratingDescriptions[rating]) {
+      starValueText.textContent = ratingDescriptions[rating];
+    }
+  }
+
+  if (starPicker && starButtons.length > 0) {
+    starButtons.forEach(btn => {
+      // Hover effect
+      btn.addEventListener('mouseenter', () => {
+        const hoverRating = parseInt(btn.getAttribute('data-rating'), 10);
+        starButtons.forEach(b => {
+          const r = parseInt(b.getAttribute('data-rating'), 10);
+          if (r <= hoverRating) {
+            b.classList.add('hovered');
+          } else {
+            b.classList.remove('hovered');
+          }
+        });
+        if (starValueText && ratingDescriptions[hoverRating]) {
+          starValueText.textContent = ratingDescriptions[hoverRating];
+        }
+      });
+
+      // Click event
+      btn.addEventListener('click', () => {
+        const rating = parseInt(btn.getAttribute('data-rating'), 10);
+        if (selectedRatingInput) selectedRatingInput.value = rating;
+        updateStarDisplay(rating);
+      });
+    });
+
+    // Reset hover on mouse leave
+    starPicker.addEventListener('mouseleave', () => {
+      starButtons.forEach(b => b.classList.remove('hovered'));
+      const currentRating = selectedRatingInput ? parseInt(selectedRatingInput.value, 10) : 5;
+      updateStarDisplay(currentRating);
+    });
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, 
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+  }
+
+  function getInitials(name) {
+    const parts = name.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[1][0]).toUpperCase();
+    }
+    return (name.substring(0, 2) || 'CL').toUpperCase();
+  }
+
+  function createReviewCardHTML(review, isNew = false) {
+    const starsCount = Math.max(1, Math.min(5, parseInt(review.rating, 10) || 5));
+    let starsHtml = '';
+    for (let i = 0; i < 5; i++) {
+      starsHtml += i < starsCount ? '<span>★</span>' : '<span style="color: #475569;">★</span>';
+    }
+
+    const safeAuthor = escapeHTML(review.author);
+    const safeEstablishment = escapeHTML(review.establishment);
+    const safeMessage = escapeHTML(review.message);
+    const initials = getInitials(safeAuthor);
+
+    return `
+      <div class="testimonial-card" style="${isNew ? 'border-color: rgba(16, 185, 129, 0.5);' : ''}">
+        <span class="testimonial-quote-icon">“</span>
+        <div class="testimonial-header">
+          <div class="client-avatar" style="background: linear-gradient(135deg, #10b981, #06b6d4);">${initials}</div>
+          <div class="client-info">
+            <h4 style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              ${safeAuthor}
+              ${isNew ? '<span class="badge-new-review">Nouveau</span>' : ''}
+            </h4>
+            <p>${safeEstablishment}</p>
+          </div>
+        </div>
+        <div class="testimonial-stars">
+          ${starsHtml}
+        </div>
+        <p class="testimonial-text">
+          « ${safeMessage} »
+        </p>
+        <div class="testimonial-footer">
+          <span class="badge-verified">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Client Vérifié
+          </span>
+          <span>${review.date || 'Récemment'}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // Load saved reviews from localStorage
+  const STORAGE_KEY = 'msz_portfolio_client_reviews';
+  function loadSavedReviews() {
+    if (!userReviewsContainer) return;
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const reviews = JSON.parse(saved);
+        if (Array.isArray(reviews)) {
+          let html = '';
+          reviews.forEach(rev => {
+            html += createReviewCardHTML(rev, false);
+          });
+          userReviewsContainer.innerHTML = html;
+        }
+      }
+    } catch (e) {
+      console.warn('Could not load reviews from localStorage', e);
+    }
+  }
+
+  loadSavedReviews();
+
+  // Handle Review Submission
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const authorInput = document.getElementById('reviewAuthor');
+      const establishmentInput = document.getElementById('reviewEstablishment');
+      const messageInput = document.getElementById('reviewMessage');
+
+      const author = authorInput ? authorInput.value.trim() : '';
+      const establishment = establishmentInput ? establishmentInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+      const rating = selectedRatingInput ? parseInt(selectedRatingInput.value, 10) : 5;
+
+      if (!author || !establishment || !message) {
+        alert('Veuillez remplir tous les champs obligatoires.');
+        return;
+      }
+
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString('fr-FR', {
+        month: 'short',
+        year: 'numeric'
+      });
+
+      const newReview = {
+        id: Date.now(),
+        author,
+        establishment,
+        rating,
+        message,
+        date: formattedDate
+      };
+
+      // Save to localStorage
+      try {
+        const existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        existing.unshift(newReview);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+      } catch (err) {
+        console.warn('Could not save review to localStorage', err);
+      }
+
+      // Prepend to DOM
+      if (userReviewsContainer) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = createReviewCardHTML(newReview, true);
+        const cardElement = tempDiv.firstElementChild;
+        cardElement.style.opacity = '0';
+        cardElement.style.transform = 'translateY(-20px)';
+        userReviewsContainer.prepend(cardElement);
+
+        setTimeout(() => {
+          cardElement.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+          cardElement.style.opacity = '1';
+          cardElement.style.transform = 'translateY(0)';
+        }, 50);
+      }
+
+      // Reset form
+      reviewForm.reset();
+      if (selectedRatingInput) selectedRatingInput.value = '5';
+      updateStarDisplay(5);
+
+      // Toast notification
+      if (toastMsg) {
+        toastMsg.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Merci infiniment ! Votre avis a été publié avec succès.</span>
+        `;
+        toastMsg.classList.add('show');
+        setTimeout(() => {
+          toastMsg.classList.remove('show');
+        }, 5000);
+      }
+
+      // Smooth scroll back to the reviews
+      const testimonialsSec = document.getElementById('testimonials');
+      if (testimonialsSec) {
+        testimonialsSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // 7. Contact Form Simulation & Toast
+  const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -235,6 +466,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show Toast
         if (toastMsg) {
+          toastMsg.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Merci ! Votre message a bien été envoyé. Je vous répondrai très rapidement.</span>
+          `;
           toastMsg.classList.add('show');
           setTimeout(() => {
             toastMsg.classList.remove('show');
