@@ -335,14 +335,23 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             Client Vérifié
           </span>
-          <span>${review.date || 'Récemment'}</span>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: var(--text-muted); font-size: 0.8rem;">${review.date || 'Récemment'}</span>
+            <button type="button" class="btn-delete-review" onclick="deleteReview('${review.id}')" title="Supprimer cet avis" aria-label="Supprimer cet avis">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     `;
   }
 
-  // Load saved reviews from localStorage
-  const STORAGE_KEY = 'msz_portfolio_client_reviews';
+  // Load saved reviews from localStorage (v2 clean storage - efface l'avis de test SSS/RRRR)
+  const STORAGE_KEY = 'msz_portfolio_client_reviews_v2';
+  try {
+    localStorage.removeItem('msz_portfolio_client_reviews');
+  } catch (e) {}
+
   const emptyReviewsMsg = document.getElementById('emptyReviewsMessage');
 
   function updateEmptyMessageState(hasReviews) {
@@ -350,6 +359,19 @@ document.addEventListener('DOMContentLoaded', () => {
       emptyReviewsMsg.style.display = hasReviews ? 'none' : 'block';
     }
   }
+
+  window.deleteReview = function(reviewId) {
+    if (confirm('Voulez-vous vraiment supprimer cet avis ?')) {
+      try {
+        let existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        existing = existing.filter(r => String(r.id) !== String(reviewId));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+        loadSavedReviews();
+      } catch (err) {
+        console.warn('Could not delete review', err);
+      }
+    }
+  };
 
   function loadSavedReviews() {
     if (!userReviewsContainer) return;
@@ -370,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
       console.warn('Could not load reviews from localStorage', e);
     }
+    userReviewsContainer.innerHTML = '';
     updateEmptyMessageState(false);
   }
 
@@ -394,9 +417,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Date complète : Jour, Mois, Année (ex: 12 septembre 2026)
       const today = new Date();
       const formattedDate = today.toLocaleDateString('fr-FR', {
-        month: 'short',
+        day: 'numeric',
+        month: 'long',
         year: 'numeric'
       });
 

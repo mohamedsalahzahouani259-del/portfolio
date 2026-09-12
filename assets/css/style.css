@@ -1362,6 +1362,28 @@ section {
   animation: pulseDot 2s infinite;
 }
 
+.btn-delete-review {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #f87171;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.btn-delete-review:hover {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: #ef4444;
+  color: #fff;
+  transform: scale(1.08);
+}
+
 /* Formulaire d'ajout d'avis */
 .add-review-wrapper {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(24, 34, 53, 0.85) 100%);
