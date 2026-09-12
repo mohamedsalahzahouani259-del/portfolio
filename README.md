@@ -1,8 +1,8 @@
 # Portfolio Mohamed Salah Zahouani — Développeur Web & Automatisation avec IA 🚀
 
-Portfolio professionnel moderne, ultra-rapide et responsive de **Mohamed Salah Zahouani**, 22 ans, basé à Sousse (Tunisie).
+Portfolio professionnel moderne, ultra-rapide et 100% responsive de **Mohamed Salah Zahouani**, 22 ans, basé à Sousse (Tunisie).
 
-Spécialiste en **Développement Web Moderne** et **Automatisation par Intelligence Artificielle (Voice AI & Agents téléphoniques)** pour restaurants et entreprises.
+Site conçu en **100% HTML5 / CSS3 / Vanilla JavaScript pur**, sans aucun framework (pas de React, pas de Tailwind CLI, pas de Vite, pas de Node.js). 
 
 ---
 
@@ -17,41 +17,33 @@ Spécialiste en **Développement Web Moderne** et **Automatisation par Intellige
    - Site web gastronomique raffiné alliant patrimoine et élégance culinaire.
 4. **Pervoi** :
    - Site web & carte gourmande pour restaurant lounge, optimisé mobile-first.
+5. **Section Avis Clients** :
+   - Espace d'avis avec témoignages réels et formulaire interactif permettant à tout client de noter et publier son retour d'expérience en direct.
 
 ---
 
-## 💻 Structure du Projet
-
-Le site est conçu en **HTML5 & CSS3 pur** avec une touche de **Vanilla JavaScript** :
+## 💻 Structure du Projet (Pur HTML / CSS / JS)
 
 ```
 .
-├── index.html              # Page principale du portfolio
+├── index.html              # Page principale du portfolio (HTML5 pur)
 ├── assets/
 │   ├── css/
-│   │   └── style.css       # Styles CSS modernes (dark mode, glassmorphism, responsive)
+│   │   └── style.css       # Styles CSS3 modernes (thème sombre, glassmorphism, responsive)
 │   ├── js/
-│   │   └── main.js         # Filtres de projets, modal interactif, menu mobile, formulaires
+│   │   └── main.js         # JavaScript pur (Vanilla JS : avis clients, filtres, modales)
 │   └── images/
 │       └── profile.jpg     # Photo de profil de Mohamed Salah Zahouani
-└── dist/                   # Build de production compilé (Vite)
+├── netlify.toml            # Configuration de publication statique Netlify
+└── README.md               # Documentation
 ```
 
 ---
 
-## 🚀 Utilisation
+## 🚀 Utilisation & Déploiement
 
-### Option 1 : Ouverture directe (sans serveur)
-Double-cliquez simplement sur le fichier `index.html` pour l'ouvrir dans n'importe quel navigateur (Safari, Chrome, Firefox, Edge).
-
-### Option 2 : Lancement avec Vite
-```bash
-# Lancer le serveur de développement local
-npm run dev
-
-# Compiler pour la production
-npm run build
-```
+- **En local** : Double-cliquez simplement sur `index.html` pour ouvrir le site dans n'importe quel navigateur (Safari, Chrome, Firefox, Edge). Aucun serveur ni compilation nécessaire !
+- **En ligne (Netlify / GitHub Pages / Vercel)** : Déployé instantanément comme un site web statique ultra-performant.
 
 ---
 
