@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const starsCount = Math.max(1, Math.min(5, parseInt(review.rating, 10) || 5));
     let starsHtml = '';
     for (let i = 0; i < 5; i++) {
-      starsHtml += i < starsCount ? '<span>★</span>' : '<span style="color: #475569;">★</span>';
+      starsHtml += i < starsCount ? '<span>★</span>' : '<span style="color: var(--text-muted); opacity: 0.35;">★</span>';
     }
 
     const safeAuthor = escapeHTML(review.author);
@@ -515,5 +515,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, 1000);
     });
+  }
+
+  // 8. Bascule Thème Clair / Sombre (Theme Toggle)
+  const themeToggle = document.getElementById('themeToggle');
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('msz_theme', theme);
+    } catch (e) {}
+  }
+
+  function toggleTheme() {
+    const current = getCurrentTheme();
+    const target = current === 'light' ? 'dark' : 'light';
+    applyTheme(target);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
+  }
+
+  // Réagir aux changements de thème système si l'utilisateur n'a pas fixé de choix manuel
+  if (window.matchMedia) {
+    try {
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        const saved = localStorage.getItem('msz_theme');
+        if (!saved) {
+          applyTheme(e.matches ? 'light' : 'dark');
+        }
+      });
+    } catch (e) {}
   }
 });
