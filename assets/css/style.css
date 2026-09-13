@@ -404,6 +404,10 @@ button, input, textarea, select {
   padding: 8px;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 /* ==========================================================================
    THEME TOGGLE (DARK / LIGHT)
    ========================================================================== */
@@ -2036,12 +2040,18 @@ textarea.form-control {
     flex-direction: column;
     gap: 18px;
     transform: translateY(-150%);
-    transition: transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     z-index: 99;
   }
 
   .mobile-menu.open {
     transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .hero-title {
